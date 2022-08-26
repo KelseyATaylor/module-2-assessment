@@ -59,7 +59,7 @@ const summedPrice = cart.reduce(function (grandTotal, currentValue) {
 function calcFinalPrice(cartTotal, couponValue, tax) {
 	return cartTotal * (1 + tax) - couponValue;
 }
-// console.log(calcFinalPrice(9.99, 1.99, 0.07));
+console.log(calcFinalPrice(summedPrice, 5, 0.06));
 
 //////////////////PROBLEM 3////////////////////
 /*  

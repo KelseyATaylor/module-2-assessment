@@ -156,11 +156,13 @@ const foodArr = [
 //CODE HERE
 
 const filteredFood = foodArr.filter(function (element) {
-	return element.tags === "crispety";
+	if (element.tags.includes("crispety")) {
+		return element;
+	}
+	//let { price: newPrice } = pizza; //this also works
 });
 
-console.log(filteredFood);
-// ?? Come back to this one
+// console.log(filteredFood);
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -203,18 +205,30 @@ console.log(filteredFood);
 
 //CODE HERE
 
-function filterByProperty(property, number, type) {
-	let filteredArray = foodArr.filter(function (element) {
-		for (i = 0; i < foodArr.length; i++) {
-			if (type === "above") {
-				return foodArr[i];
-			} else if (type === "below") {
-				return foodArr[i];
-			}
+// function filterByProperty(property, number, type) {
+// 	let filteredArray = foodArr.filter(function (element) {
+// 		for (i = 0; i < foodArr.length; i++) {
+// 			if (type === "above") {
+// 				return foodArr[i];
+// 			} else if (type === "below") {
+// 				return foodArr[i];
+// 			}
+// 		}
+// 	});
+// }
+//^^ Doesn't work, but good effort Kelsey
+
+const filterByProperty = (property, number, type) => {
+	const filteredFood = foodArr.filter((food) => {
+		if (type === "above") {
+			return food[property] >= number;
+		} else {
+			return food[property] <= number;
 		}
 	});
-}
-//?? come back to this one
+
+	return filteredFood;
+};
 
 /*
     Invoke the `filterByProperty` function passing
@@ -224,4 +238,4 @@ function filterByProperty(property, number, type) {
 */
 
 //CODE HERE
-console.log(filterByProperty("5", 3, "above"));
+console.log(filterByProperty("popularity", 3.5, "below"));

@@ -50,7 +50,7 @@ let empOne = new Employee("Jess", "weekday mornings, weekday afternoons");
 */
 
 //CODE HERE
-console.log(empOne.getSchedule());
+// console.log(empOne.getSchedule());
 
 /*
     Make a copy of the empOne object
@@ -65,9 +65,9 @@ console.log(empOne.getSchedule());
 */
 
 //CODE HERE
-// let empTwo = { ...empOne };
-// const { empTwo.name: Nick } = empTwo;
-// console.log(empTwo);
+let empTwo = { ...empOne };
+empTwo.name = "Nick";
+console.log(empTwo);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -103,9 +103,9 @@ class Manager extends Employee {
 		console.log(`${manager.name} manages ${this.employees}.`);
 	}
 
-	// addEmployee(emp) {
-	// 	return Employee.push(emp);
-	// }
+	addEmployee(emp) {
+		this.employees.push(emp);
+	}
 }
 
 /*
@@ -121,7 +121,7 @@ class Manager extends Employee {
 
 //CODE HERE
 
-let manager = new Manager("Winston", "weekday mornings, weekday afternoons", "Cece & Schmidt");
+let manager = new Manager("Winston", "weekday mornings, weekday afternoons", ["Cece", "Schmidt"]);
 
 /*
     Call the `getEmployees` method on the
@@ -129,7 +129,7 @@ let manager = new Manager("Winston", "weekday mornings, weekday afternoons", "Ce
 */
 
 //CODE HERE
-// console.log(manager.getEmployees());
+console.log(manager.getEmployees());
 
 /*
     Call the `addEmployee` method on the 

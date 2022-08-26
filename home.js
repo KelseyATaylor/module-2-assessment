@@ -56,13 +56,12 @@ function canWeDeliver(zipCode) {
 	for (i = 0; i < deliveryAreaZipCodes.length; i++) {
 		if (deliveryAreaZipCodes[i] === zipCode) {
 			return `You're in our delivery zone!`;
-		} else if (deliveryAreaZipCodes[i] !== zipCode) {
-			return `Sorry, we can't deliver to that address`;
 		}
 	}
+	return `Sorry, we can't deliver to that address`;
 }
 
-// console.log(canWeDeliver(85205));
+console.log(canWeDeliver(85204));
 
 /* 
     Problem 2 Continued
