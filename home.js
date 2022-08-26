@@ -7,7 +7,6 @@
     page of the restaurant's website.
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /* 
     Write an *arrow* function called `greetUser`
@@ -22,10 +21,13 @@
 */
 
 //CODE HERE
+// function greetUser(username) {
+// 	return `Welcome back, ${username}`;
+// }
 
+const greetUser = (username) => `Welcome back, ${username}!`;
 
-
-
+// console.log(greetUser(`Andrew`));
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -47,11 +49,20 @@
         // `You're in our delivery zone!`
 */
 
-const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
+const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206];
 
 //CODE HERE
+function canWeDeliver(zipCode) {
+	for (i = 0; i < deliveryAreaZipCodes.length; i++) {
+		if (deliveryAreaZipCodes[i] === zipCode) {
+			return `You're in our delivery zone!`;
+		} else if (deliveryAreaZipCodes[i] !== zipCode) {
+			return `Sorry, we can't deliver to that address`;
+		}
+	}
+}
 
-
+// console.log(canWeDeliver(85205));
 
 /* 
     Problem 2 Continued
@@ -71,7 +82,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+function canWeDeliverTwo(zipCode) {
+	if (deliveryAreaZipCodes.includes(zipCode)) {
+		return `You're in our delivery zone!`;
+	} else {
+		return `Sorry, we can't deliver to that address.`;
+	}
+}
 
+// console.log(canWeDeliverTwo(84020));
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -87,15 +106,15 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 const deals = [
-    {
-        title: '15% Off!', 
-        desc: 'Applied to your entire order when you spend $30 or more'
-    }, 
-    {
-        title: 'Free Kids Meal with 2 Regular Entrees', 
-        desc: '   This deal lasts until the end of March! '
-    }
-]
+	{
+		title: "15% Off!",
+		desc: "Applied to your entire order when you spend $30 or more",
+	},
+	{
+		title: "Free Kids Meal with 2 Regular Entrees",
+		desc: "   This deal lasts until the end of March! ",
+	},
+];
 
 /*
     The owner has decided to take the 15% off
@@ -107,8 +126,9 @@ const deals = [
 */
 
 //CODE HERE
+let newDeal = deals[0].title.replace("15", "10");
 
-
+// console.log(newDeal);
 
 /*
     The restaurant is going to continue its
@@ -124,3 +144,6 @@ const deals = [
 */
 
 //CODE HERE
+let newDealTwo = deals[1].desc.replace("March", "April").trim();
+
+// console.log(newDealTwo);
