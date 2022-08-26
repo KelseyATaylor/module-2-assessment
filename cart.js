@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,24 +18,27 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+	{
+		name: "pizza",
+		price: 9.99,
+	},
+	{
+		name: "pasta",
+		price: 8.99,
+	},
+	{
+		name: "salad",
+		price: 7.99,
+	},
+];
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce(function (grandTotal, currentValue) {
+	return grandTotal + currentValue.price;
+}, 0);
 
+// console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -54,8 +56,10 @@ const cart = [
 */
 
 //CODE HERE
-
-
+function calcFinalPrice(cartTotal, couponValue, tax) {
+	return cartTotal * (1 + tax) - couponValue;
+}
+// console.log(calcFinalPrice(9.99, 1.99, 0.07));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,7 +83,9 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+Customer object should have first name (string), last name(string)--so you know what to call them. 
+Phone number (number), email (string) -- to send confirmation or contact if there's an issue. 
+How they're paying (debit, credit, cash) (string) -- to charge them properly.
 */
 
 /*
@@ -88,3 +94,10 @@ const cart = [
 */
 
 //CODE HERE
+const customer = {
+	firstName: "Link",
+	lastName: "Hyrule",
+	phoneNumber: 1234567890,
+	email: "herooftime@hyrulemail.com",
+	paymentMethod: "rupees",
+};

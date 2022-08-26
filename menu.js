@@ -7,7 +7,6 @@
     and filtering those arrays. 
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Create an object called `pizza` that has 6
@@ -32,7 +31,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+	name: "pepperoni",
+	price: 5,
+	category: "entree",
+	popularity: 4.5,
+	rating: 4.8,
+	tags: ["kid-friendly", "extra-delicious"],
+};
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -43,7 +49,8 @@
 */
 
 //CODE HERE
-
+// console.log(pizza.popularity);
+//returns 4.5
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,8 @@
 */
 
 //CODE HERE
-
+// console.log(pizza.tags[1]);
+//returns 'extra-delicious'
 
 /*
     Third, destructure the price off of the
@@ -63,7 +71,8 @@
 */
 
 //CODE HERE
-
+let { price: newPrice } = pizza;
+// console.log(newPrice);
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +82,8 @@
 */
 
 //CODE HERE
-
+let { category: newCategory } = pizza;
+// console.log(newCategory);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,8 +98,48 @@
 */
 
 //CODE HERE
-
-
+const foodArr = [
+	{
+		name: "beef tacos",
+		price: 2,
+		category: "entree",
+		popularity: 4,
+		rating: 3.9,
+		tags: ["kid-friendly", "extra-delicious"],
+	},
+	{
+		name: "cesaer salad",
+		price: 3,
+		category: "side",
+		popularity: 4.1,
+		rating: 4,
+		tags: ["lots of cheese", "lots of croutons"],
+	},
+	{
+		name: "blue lemonade",
+		price: 1,
+		category: "drink",
+		popularity: 5,
+		rating: 5,
+		tags: ["a kid favorite", "stains blue"],
+	},
+	{
+		name: "orange chicken",
+		price: 6,
+		category: "entree",
+		popularity: 4.8,
+		rating: 4.5,
+		tags: ["family favorite", "comes with rice"],
+	},
+	{
+		name: "fries",
+		price: 4,
+		category: "side",
+		popularity: 3.3,
+		rating: 3.2,
+		tags: ["crispety", "the best form of potatoes"],
+	},
+];
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -105,9 +155,12 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(function (element) {
+	return element.tags === "crispety";
+});
 
-
+console.log(filteredFood);
+// ?? Come back to this one
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -150,6 +203,18 @@
 
 //CODE HERE
 
+function filterByProperty(property, number, type) {
+	let filteredArray = foodArr.filter(function (element) {
+		for (i = 0; i < foodArr.length; i++) {
+			if (type === "above") {
+				return foodArr[i];
+			} else if (type === "below") {
+				return foodArr[i];
+			}
+		}
+	});
+}
+//?? come back to this one
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +224,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty("5", 3, "above"));
