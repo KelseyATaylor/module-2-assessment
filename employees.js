@@ -134,7 +134,8 @@ console.log(manager.getEmployees());
 */
 
 //CODE HERE
-console.log();
+// console.log(manager.getEmployees("Coach"));
+///idk if we used an addEmployee method
 
 /*
     Call the `getEmployees` method on the
