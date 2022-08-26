@@ -102,6 +102,10 @@ class Manager extends Employee {
 	getEmployees() {
 		console.log(`${manager.name} manages ${this.employees}.`);
 	}
+
+	// addEmployee(emp) {
+	// 	return Employee.push(emp);
+	// }
 }
 
 /*
@@ -125,7 +129,7 @@ let manager = new Manager("Winston", "weekday mornings, weekday afternoons", "Ce
 */
 
 //CODE HERE
-console.log(manager.getEmployees());
+// console.log(manager.getEmployees());
 
 /*
     Call the `addEmployee` method on the 
@@ -134,8 +138,7 @@ console.log(manager.getEmployees());
 */
 
 //CODE HERE
-// console.log(manager.getEmployees("Coach"));
-///idk if we used an addEmployee method
+console.log(manager.addEmployee("Coach"));
 
 /*
     Call the `getEmployees` method on the
@@ -144,3 +147,4 @@ console.log(manager.getEmployees());
 */
 
 //CODE HERE
+console.log(manager.getEmployees());
